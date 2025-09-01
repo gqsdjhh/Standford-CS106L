@@ -45,6 +45,21 @@ int inputFileStreamExample() {
     return 0;
 }
 
+void test()
+{
+    for(auto i = 0; i < 5; ++ i){
+        ifstream input("test.txt");
+        if(input){
+            std::string line;
+            std::getline(input, line);
+            std::cout << "Read from the file: " << line << '\n';
+        }
+        else{
+            cerr << "errror" << "\n";
+        }
+    }
+}
+
 int main(){
     // ostringstream oss("Hello, World!", stringstream::ate);
     // cout << oss.str() <<endl;
@@ -56,8 +71,9 @@ int main(){
 
     // outputFileStreamExample();
 
-    inputFileStreamExample();
+    //inputFileStreamExample();
 
+    test();
 
     return 0;
 }
