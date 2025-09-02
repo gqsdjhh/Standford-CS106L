@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <deque>
+#include <map>
 
 using namespace std;
 
@@ -9,21 +10,21 @@ void vectortest(){
 
     for(auto &i : abc){
         i *= i;
-        cout << i << "\n";
+        std::cout << i << "\n";
     }
-    cout << "\n";
+    std::cout << "\n";
 
     abc.push_back(6);
     for(auto i : abc){
-        cout << i << "\n";
+        std::cout << i << "\n";
     }
-    cout << "\n";    
+    std::cout << "\n";    
 
     abc.pop_back();
     for(auto i : abc){
-        cout << i << "\n";
+        std::cout << i << "\n";
     }
-    cout << "size: " << abc.size() << "\n";
+    std::cout << "size: " << abc.size() << "\n";
 }
 
 void dequetest(){
@@ -31,28 +32,54 @@ void dequetest(){
 
     for(auto &i : abc){
         i *= i;
-        cout << i << "\n";
+        std::cout << i << "\n";
     }
-    cout << "\n";
+    std::cout << "\n";
 
     abc.push_front(6);
     for(auto i : abc){
-        cout << i << "\n";
+        std::cout << i << "\n";
     }
-    cout << "\n";    
+    std::cout << "\n";    
 
     abc.pop_front();
     for(auto i : abc){
-        cout << i << "\n";
+        std::cout << i << "\n";
     }
-    cout << "size: " << abc.size() << "\n";    
+    std::cout << "size: " << abc.size() << "\n";    
+}
+
+void maptest(){
+    map<int, string> abc
+    {
+        {1, "one"},
+        {2, "two"},
+        {3, "three"},
+        {10, "ten"},
+        {6, "six"},
+        {0, "zero"}
+    };
+
+    for(auto &i : abc){
+        std::cout << i.first << ": " << i.second << "\n";
+    }
+    std::cout << "\n";
+
+    abc.erase(2);
+    for(auto &i : abc){
+        std::cout << i.first << ": " << i.second << "\n";
+    }
+    std::cout << "\n";
+
+    std::cout << "size: " << abc.size() << "\n";
 }
 
 int main(void){
     // vectortest();
 
-    dequetest();
+    // dequetest();
 
+    maptest();
 
     return 0;
 }
