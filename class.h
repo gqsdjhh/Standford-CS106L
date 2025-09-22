@@ -13,6 +13,9 @@ class StanfordID{
         std::string getSunet();
         int getID();
         ~StanfordID();
+        bool operator == (const StanfordID &other) const;
+        bool operator != (const StanfordID &other) const; 
+        bool operator < (const StanfordID &other) const;
 };
 
 class Shape{
